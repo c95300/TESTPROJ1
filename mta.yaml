@@ -1,0 +1,19 @@
+ID: TRAIN01_HANDSON3
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: batch1
+   type: hdb
+   path: batch1
+   requires:
+    - name: hdi_batch1
+
+resources:
+ - name: hdi_batch1
+   parameters:
+      config:
+         schema: BATCH1
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
